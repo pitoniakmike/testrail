@@ -32,6 +32,8 @@ import com.google.gson.JsonObject;
 
 import utils.gson.GsonServices;
 
+import static org.testng.Assert.*;
+
 
 public class TestRailServicesTest {
     private static final Logger LOGGER = LoggerFactory.getLogger(new Throwable().getStackTrace()[0].getClassName());
@@ -40,11 +42,12 @@ public class TestRailServicesTest {
     private Integer suiteId = null;
 
     //https://itriagehealth.testrail.com/index.php?/dashboard
+    //https://example.testrail.com/index.php?/api/v2/get_case/1
     
     @BeforeClass()
-    public void beforeClass() throws TestRailConfigException, IOException, KeyManagementException, ConfigurationException, NoSuchAlgorithmException, KeyStoreException{
+    public void beforeClass() {
         LogManager.getRootLogger().setLevel(Level.INFO);
-        testRailServices = TestRailServices.builder("https://itriagehealth.testrail.com/testrail").userName("xxxx!")
+        testRailServices = TestRailServices.builder("https://itriagehealth.testrail.net/index.php?/api/v2").userName("Trustthepr0cess!")
                 .passWord("foo")
                 .retryCnt(3)
                 .build();
@@ -64,7 +67,7 @@ public class TestRailServicesTest {
     }
     
     @Test
-    public void getRunBuilderTest() throws IOException, ParseException, TestRailConfigException {
+    public void getRunBuilderTest() throws IOException, TestRailConfigException {
         Run run = testRailServices.getRunBuilder("projectName", "runName")
             .description("description")
             .projectId(3)
@@ -78,7 +81,7 @@ public class TestRailServicesTest {
     }
     
     @Test
-    public void getPlanBuilderTest() throws IOException, ParseException, TestRailConfigException {
+    public void getPlanBuilderTest() throws IOException, TestRailConfigException {
         Plan plan = testRailServices.getPlanBuilder("mileStoneNane")
             .description("description")
             .projectId(1)
@@ -97,7 +100,7 @@ public class TestRailServicesTest {
     }
     
     @Test
-    public void getSuiteBuilderTest() throws IOException, ParseException, TestRailConfigException {
+    public void getSuiteBuilderTest() throws IOException, TestRailConfigException {
         Suite suite = testRailServices.getSuiteBuilder("suiteName")
             .description("description")
             .projectId(1)
@@ -106,7 +109,7 @@ public class TestRailServicesTest {
     }
     
     @Test
-    public void getSectionBuilderTest() throws IOException, ParseException, TestRailConfigException {
+    public void getSectionBuilderTest() throws IOException, TestRailConfigException {
         Section section = testRailServices.getSectionBuilder("suiteName")
             .description("description")
             .projectId(1)
@@ -137,7 +140,7 @@ public class TestRailServicesTest {
     	jsonObjectBuilder.add("refa",  refs);
 	}*/
     @Test
-    public void getTestCaseBuilderTest() throws IOException, ParseException, TestRailConfigException {
+    public void getTestCaseBuilderTest() throws IOException, TestRailConfigException {
         TestCase testCase = testRailServices.getTestCaseBuilder("TestCase")
             .projectId(1)
             .suiteId(2)
@@ -155,7 +158,7 @@ public class TestRailServicesTest {
     }
     
     @Test
-    public void getResultsBuilderTest() throws IOException, ParseException, TestRailConfigException {
+    public void getResultsBuilderTest() throws IOException, TestRailConfigException {
         Results results = testRailServices.getResultsBuilder("projectName")
         		.projectId(1)
         		.suiteId(2)
@@ -184,7 +187,7 @@ public class TestRailServicesTest {
     
     @Test()
     public void isProjectExistsTest() throws IOException, TestRailConfigException{
-        Assert.assertTrue(testRailServices.isProjectExists("apiTestProj"));
+        assertTrue(testRailServices.isProjectExists("apiTestProj"));
     }
     
     @Test
@@ -207,7 +210,7 @@ public class TestRailServicesTest {
     
     @Test()
     public void isRunExistsTest() throws IOException, TestRailConfigException{
-    	Assert.assertTrue(testRailServices.getRunBuilder("projectName", "runName").build(true).isExists());
+    	assertTrue(testRailServices.getRunBuilder("projectName", "runName").build(true).isExists());
     }
     
     @Test
@@ -266,7 +269,7 @@ public class TestRailServicesTest {
     @Test()
     public void getProjectTest() throws IOException{
         JsonArray jsonArray = testRailServices.getProjects("apiTestProj");
-        Assert.assertTrue(jsonArray.size()==1);
+        assertEquals(jsonArray.size(), 1);
         LOGGER.info("{}", GsonServices.build().prettyPrint(jsonArray));
     }
     
@@ -277,7 +280,7 @@ public class TestRailServicesTest {
                 .projectId(1)
                 .build(true)
                 .add();
-        Assert.assertTrue(jsonObject!=null);
+        assertNotNull(jsonObject);
         LOGGER.info("{}", GsonServices.build().prettyPrint(jsonObject));
     }
     

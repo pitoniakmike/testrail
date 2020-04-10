@@ -141,13 +141,14 @@ public class TestRailServices {
 		provider.setCredentials(AuthScope.ANY, new UsernamePasswordCredentials(userName, passWord));
 
 		httpClient = HttpClientBuilder.create().setDefaultCredentialsProvider(provider).build();
+
 		//TODO bring in from builder
 		requestConfig = RequestConfig.custom().setConnectTimeout(30000).setConnectionRequestTimeout(30000)
 				.setSocketTimeout(30000).build();
 	}
 
-	public TestRailServices(String propertyFilePath) throws KeyManagementException, NoSuchAlgorithmException,
-			KeyStoreException, IOException, ConfigurationException {
+	public TestRailServices(String propertyFilePath) throws KeyManagementException,
+			IOException, ConfigurationException {
 		LogManager.getRootLogger().setLevel(Level.DEBUG);
 		if (propertyFilePath == null) {
 			propertyFilePath = FileServices.build().findFileInTree("testrail.properties");
@@ -2019,7 +2020,7 @@ public class TestRailServices {
 	}
 
 	public JsonObject getUserByEmail(String userEmail, boolean bFailOnNotFound)
-			throws TestRailConfigException, IOException {
+			throws IOException {
 		CloseableHttpResponse response = null;
 		JsonObject jsonObject = null;
 		int retry = retryCnt;
@@ -2250,7 +2251,7 @@ public class TestRailServices {
 	}
 
 	//TODO for all??
-	public Boolean isRunExists(Integer runId) throws IOException, TestRailConfigException {
+	public Boolean isRunExists(Integer runId) throws IOException {
 		boolean exists = false;
 		JsonObject jsonObject = getRun(runId, false);
 		exists = jsonObject != null;
@@ -2334,7 +2335,7 @@ public class TestRailServices {
 		return isSectionExists(projectId, getSectionIdByName(projectId, suiteId, sectionName, false), sectionName);
 	}
 
-	public Boolean isTestCaseExists(Integer testCaseId) throws IOException, TestRailConfigException {
+	public Boolean isTestCaseExists(Integer testCaseId) throws IOException {
 		boolean exists = false;
 		JsonObject jsonObject = getTestCase(testCaseId, false);
 		exists = jsonObject != null;
@@ -2841,7 +2842,7 @@ public class TestRailServices {
 		return exists;
 	}
 
-	public Boolean isMileStoneExists(Integer mileStoneId) throws IOException, TestRailConfigException {
+	public Boolean isMileStoneExists(Integer mileStoneId) throws IOException {
 		boolean exists = false;
 		JsonObject jsonObject = getMileStone(mileStoneId, false);
 		if (jsonObject != null) {
@@ -2938,7 +2939,7 @@ public class TestRailServices {
 
 	//TODO move these into Test builder
 	public JsonArray getTestsByName(Integer runId, String testName, boolean bFailOnNotFound)
-			throws TestRailConfigException, IOException {
+			throws IOException {
 		JsonArray jsonArray = new JsonArray();
 
 		JsonArray testCaseArray = getTests(runId);
