@@ -1,0 +1,20 @@
+{
+  "results": [
+    {
+      "case_id": "basicTest",
+      "status_id": 1,
+      "comment": "",
+      "defects": null,
+      "elapsed": null,
+      "version": "1.2.3"
+    },
+    {
+      "case_id": "basicTest2",
+      "status_id": 1,
+      "comment": "foobar",
+      "defects": null,
+      "elapsed": null,
+      "version": "1.2.3"
+    }
+  ]
+}

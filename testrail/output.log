@@ -1,0 +1,6 @@
+2020-03-31 08:37:20,903 DEBUG org.apache.http.client.protocol.RequestAddCookies.process(RequestAddCookies.java:122) - CookieSpec selected: default
+2020-03-31 08:37:20,909 DEBUG org.apache.http.client.protocol.RequestAuthCache.process(RequestAuthCache.java:76) - Auth cache not set in the context
+2020-03-31 08:37:20,910 DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager.requestConnection(PoolingHttpClientConnectionManager.java:249) - Connection request: [route: {}->http://10.7.3.11:80][total kept alive: 0; route allocated: 0 of 2; total allocated: 0 of 20]
+2020-03-31 08:37:20,921 DEBUG org.apache.http.impl.conn.PoolingHttpClientConnectionManager.leaseConnection(PoolingHttpClientConnectionManager.java:282) - Connection leased: [id: 0][route: {}->http://10.7.3.11:80][total kept alive: 0; route allocated: 1 of 2; total allocated: 1 of 20]
+2020-03-31 08:37:20,922 DEBUG org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:234) - Opening connection {}->http://10.7.3.11:80
+2020-03-31 08:37:20,924 DEBUG org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:131) - Connecting to /10.7.3.11:80
