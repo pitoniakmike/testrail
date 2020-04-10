@@ -38,13 +38,16 @@ public class TestRailServicesTest {
     private TestRailServices testRailServices = null;
     private Integer projectId = null;
     private Integer suiteId = null;
-    
-    
+
+    //https://itriagehealth.testrail.com/index.php?/dashboard
     
     @BeforeClass()
     public void beforeClass() throws TestRailConfigException, IOException, KeyManagementException, ConfigurationException, NoSuchAlgorithmException, KeyStoreException{
         LogManager.getRootLogger().setLevel(Level.INFO);
-        testRailServices = TestRailServices.builder("http://10.7.3.11/testrail").userName("mpitoniak@xxx.com").passWord("foo").build();
+        testRailServices = TestRailServices.builder("https://itriagehealth.testrail.com/testrail").userName("xxxx!")
+                .passWord("foo")
+                .retryCnt(3)
+                .build();
         //testRailServices = new TestRailServices("src/main/resources/testrail.properties");
         //projectId = testRailServices.getProjectIdByName("apiTestProj", true);
     }

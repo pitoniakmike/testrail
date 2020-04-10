@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/array/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/config/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/datetime/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/file/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/gson/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/io/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/log4j/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/logger/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/regex/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/set/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/shared-resources/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/testrail/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/testrail/src/main/resources" charset="UTF-8" />
+  </component>
+</project>
