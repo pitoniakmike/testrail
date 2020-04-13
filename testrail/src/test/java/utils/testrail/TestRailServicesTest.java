@@ -43,14 +43,16 @@ public class TestRailServicesTest {
 
     //https://itriagehealth.testrail.com/index.php?/dashboard
     //https://example.testrail.com/index.php?/api/v2/get_case/1
+    //https://itriagehealth.testrail.net//index.php?/api/v2/get_projects%22
     
     @BeforeClass()
     public void beforeClass() {
         LogManager.getRootLogger().setLevel(Level.INFO);
         testRailServices = TestRailServices.builder("https://itriagehealth.testrail.net/index.php?/api/v2").userName("Trustthepr0cess!")
-                .passWord("foo")
+                .passWord("Trustthepr0cess!")
                 .retryCnt(3)
                 .build();
+
         //testRailServices = new TestRailServices("src/main/resources/testrail.properties");
         //projectId = testRailServices.getProjectIdByName("apiTestProj", true);
     }
