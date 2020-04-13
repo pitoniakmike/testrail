@@ -1,1 +1,16 @@
 /testrail/target/
+/file/target/classes/utils/file/FileServices.class
+/config/target/classes/apache/commons/config/ApacheCommonsConfigServices.class
+/io/target/classes/utils/apache/commons/io/ApacheCommonsIOServices$1.class
+/io/target/classes/utils/apache/commons/io/ApacheCommonsIOServices.class
+/datetime/target/classes/utils/datetime/DateTimeServices.class
+/io/target/classes/utils/apache/commons/io/FileNameComparator.class
+/io/target/classes/utils/apache/commons/io/FileSizeComparator.class
+/gson/target/classes/utils/gson/GsonServices.class
+/file/target/classes/utils/file/JFileFilter.class
+/file/target/classes/utils/file/LineMatcher.class
+/shared-resources/target/classes/log4j.template
+/shared-resources/target/classes/log4j.xml
+/log4j/target/classes/utils/log4j/Log4jServices.class
+/log4j/target/classes/utils/log4j/Log4jServicesConstants.class
+/logger/target/classes/utils/logger/LoggerServices.class
